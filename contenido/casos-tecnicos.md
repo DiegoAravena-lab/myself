@@ -37,3 +37,9 @@ Formato: Problema → Diagnóstico → Solución → Resultado. Todos los casos 
 - **Diagnóstico:** al auditar los logs del cliente VTOL y los archivos `.properties` de configuración, las propiedades de driver apuntaban por defecto a un pinpad Verifone y faltaba la definición del puerto serie `COM`.
 - **Solución:** actualicé las propiedades al driver serie `IngenicoRamSerialDriver`, configuré los parámetros del puerto `COM` correspondiente y creé un script batch con respaldo automático para aplicar el parche de forma uniforme en cualquier caja.
 - **Resultado:** operación de cobro con tarjeta restablecida y tiempo de resolución en soporte reducido a segundos.
+
+## Caso 7 — Base de datos local vacía por UAC VirtualStore en Windows
+- **Problema:** un extractor automático de fichadas biométricas leía la base `MDB` en la carpeta de instalación dentro de `Program Files (x86)` y devolvía cero registros, aunque el software mostraba actividad diaria normal.
+- **Diagnóstico:** al tratarse de una aplicación legada de 32 bits sin manifiesto de elevación, Windows aplicaba virtualización de archivos (UAC VirtualStore), redirigiendo silenciosamente las escrituras reales hacia el perfil de usuario (`AppData\Local\VirtualStore\...`).
+- **Solución:** actualicé el agente extractor en PowerShell para escanear tanto la ruta estándar como todas las rutas de `VirtualStore` de los perfiles del equipo, seleccionando automáticamente la base con mayor volumen real de registros activos.
+- **Resultado:** sincronización confiable en todas las sucursales independientemente de la versión instalada o permisos heredados de Windows.

@@ -116,7 +116,7 @@ export default function OpenGraphImage() {
               paddingTop: "14px",
             }}
           >
-            15 PROYECTOS EN PRODUCCIÓN
+            16 PROYECTOS EN PRODUCCIÓN
           </span>
         </div>
       </div>
