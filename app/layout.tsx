@@ -84,6 +84,16 @@ export default function RootLayout({
                   </Link>
                 </li>
                 <li>
+                  <a
+                    href="/Curriculum_Diego_Aravena.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#2F5BEA]"
+                  >
+                    CV (PDF)
+                  </a>
+                </li>
+                <li>
                   <Link
                     href="/#contacto"
                     className="rounded-[4px] border border-[#2F5BEA] px-3 py-1.5 text-[#2F5BEA] transition-colors hover:bg-[#2F5BEA] hover:text-[#FAFBFA]"
