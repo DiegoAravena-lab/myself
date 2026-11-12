@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { IBM_Plex_Mono, Public_Sans } from "next/font/google";
 import { getHomeData } from "@/lib/contenido";
+import { getBaseUrl } from "@/lib/site";
 import "./globals.css";
 
 const publicSans = Public_Sans({
@@ -21,6 +22,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 export function generateMetadata(): Metadata {
   const home = getHomeData();
   return {
+    metadataBase: new URL(getBaseUrl()),
     title: home.metaTitulo,
     description: home.metaDescripcion,
     openGraph: {
