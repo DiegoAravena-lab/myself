@@ -113,8 +113,8 @@ def render_cv():
         c.setLineWidth(2)
         c.circle(photo_cx, photo_cy, photo_radius, stroke=1, fill=0)
 
-    # PILL DEBAJO DE LA FOTO (Disponibilidad / Ubicación)
-    pill_w = 144
+    # PILL DEBAJO DE LA FOTO (Ubicación)
+    pill_w = 112
     pill_h = 16
     pill_x = sidebar_x + (sidebar_w - pill_w) / 2.0
     pill_y = photo_cy - photo_radius - 14
@@ -126,7 +126,7 @@ def render_cv():
 
     c.setFillColor(C_PILL_TEXT)
     c.setFont("Helvetica-Bold", 7.5)
-    c.drawCentredString(sidebar_x + sidebar_w / 2.0, pill_y + 4.5, "MENDOZA, AR  ·  DISPONIBILIDAD INMEDIATA")
+    c.drawCentredString(sidebar_x + sidebar_w / 2.0, pill_y + 4.5, "MENDOZA, ARGENTINA")
 
     # ESTILOS DE TEXTO SIDEBAR
     style_sb_label = ParagraphStyle(
