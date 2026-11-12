@@ -27,7 +27,7 @@ PORTFOLIO IT · DIEGO ARAVENA
 1  Verificador, Vouchers y PDF
    MongoDB, CR80 y cartelería     automático
 --------------------------------
-TOTAL  12 proyectos productivos    OK
+TOTAL  15 proyectos productivos    OK
 GRACIAS POR SU VISITA
 ```
 

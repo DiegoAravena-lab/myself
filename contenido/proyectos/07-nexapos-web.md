@@ -5,7 +5,7 @@ tipo: Proyecto propio
 categoria: POS y Retail
 estado: En producción
 impacto: multi-rol
-tecnologias: Next.js, TypeScript, Tailwind CSS, Prisma, PostgreSQL, Supabase, NextAuth, XLSX
+tecnologias: Next.js, TypeScript, Tailwind CSS, Prisma, PostgreSQL, Supabase, NextAuth, QR, XLSX
 ---
 # NexaPOS — Sistema de punto de venta web y auditoría
 
@@ -18,8 +18,8 @@ Los vendedores y supervisores necesitaban registrar ventas, controlar stock y au
 Arquitectura de base de datos, backend, interfaz de usuario, autenticación y despliegue productivo en Vercel + Supabase.
 
 ## Solución
-- Aplicación full-stack construida con Next.js (App Router), TypeScript, Tailwind CSS y Prisma sobre PostgreSQL (Supabase Connection Pooler con SSL)
-- Carga masiva de productos vía Excel (`xlsx`) con trazabilidad agrupada y edición inline de stock con registro automático de ajustes (`INVENTORY_ADJUSTMENT`)
+- Aplicación full-stack construida con Next.js (App Router), TypeScript, Tailwind CSS y Prisma sobre PostgreSQL (Supabase Connection Pooler con SSL) y verificación automática de esquema en despliegue (`ensure-schema`)
+- Carga masiva de productos vía Excel (`xlsx`) con trazabilidad agrupada, lectura de códigos QR desde navegador (`html5-qrcode`) y edición inline de stock con registro automático de ajustes (`INVENTORY_ADJUSTMENT`)
 - Sistema de roles (`Superusuario`, `Vendedor`, `Supervisor/Proveedor`) con visibilidad filtrada por proveedor asignado, permiso dinámico de edición de stock y enmascaramiento automático de márgenes de ganancia en reportes para cuentas externas
 
 ## Resultado

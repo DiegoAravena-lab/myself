@@ -31,3 +31,9 @@ Formato: Problema → Diagnóstico → Solución → Resultado. Todos los casos 
 - **Diagnóstico:** en versiones modernas de PyMuPDF sobre Python 3.13, el alias abreviado heredado `"helvb"` dejó de reconocerse como fuente Base-14 incorporada.
 - **Solución:** actualicé todas las inserciones de texto tipográfico al alias oficial `"hebo"` (Helvetica-Bold) sin depender de fuentes externas.
 - **Resultado:** generación estable y portátil de PDFs multipágina por región desde planillas Excel.
+
+## Caso 6 — Pinpad Ingenico con error de dispositivo desconectado en POS
+- **Problema:** al procesar pagos con tarjeta en terminales de caja con Pinpad Ingenico, el sistema POS devolvía el error "dispositivo desconectado".
+- **Diagnóstico:** al auditar los logs del cliente VTOL y los archivos `.properties` de configuración, las propiedades de driver apuntaban por defecto a un pinpad Verifone y faltaba la definición del puerto serie `COM`.
+- **Solución:** actualicé las propiedades al driver serie `IngenicoRamSerialDriver`, configuré los parámetros del puerto `COM` correspondiente y creé un script batch con respaldo automático para aplicar el parche de forma uniforme en cualquier caja.
+- **Resultado:** operación de cobro con tarjeta restablecida y tiempo de resolución en soporte reducido a segundos.

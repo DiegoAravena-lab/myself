@@ -13,7 +13,7 @@ LAN · VPN y conectividad entre sucursales · routers, firewall, NAT y redirecci
 MongoDB (administración, consultas, migraciones y precios POS) · PostgreSQL y Supabase (Auth, RLS, Connection Pooler) · Prisma ORM · SQLite · ecosistema Napse / Bridge POS
 
 ## Desarrollo y automatización
-Python (Flask, pandas, numpy, openpyxl, PyMuPDF, ReportLab) · JavaScript y Node.js (Express, PDFKit, bwip-js) · TypeScript, React y Next.js (App Router) · Tailwind CSS · APIs REST · Git y GitHub · Docker y WSL/Ubuntu
+Python (Flask, pandas, numpy, openpyxl, psutil, PyMuPDF, ReportLab, vtracer) · PowerShell y Batch (Windows) · JavaScript y Node.js (Express, PDFKit, bwip-js) · TypeScript, React y Next.js (App Router) · Tailwind CSS · APIs REST · Git y GitHub · Docker y WSL/Ubuntu
 
 ## En desarrollo y exploración
 - **Aplicación de presupuestos y auditoría (en análisis y prototipo):** control de presupuestos por sector y sucursal, seguimiento de consumos internos y detección de desvíos frente a límites.
