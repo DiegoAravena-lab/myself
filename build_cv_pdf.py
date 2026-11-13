@@ -125,8 +125,8 @@ def render_cv():
     c.roundRect(pill_x, pill_y, pill_w, pill_h, 4, fill=1, stroke=1)
 
     c.setFillColor(C_PILL_TEXT)
-    c.setFont("Helvetica-Bold", 7.5)
-    c.drawCentredString(sidebar_x + sidebar_w / 2.0, pill_y + 4.5, "MENDOZA, ARGENTINA")
+    c.setFont("Helvetica-Bold", 7.2)
+    c.drawCentredString(sidebar_x + sidebar_w / 2.0, pill_y + 4.5, "SAN RAFAEL, MENDOZA")
 
     # ESTILOS DE TEXTO SIDEBAR
     style_sb_label = ParagraphStyle(
@@ -169,7 +169,7 @@ def render_cv():
         ("WHATSAPP / TEL", "+54 260 484 0852", "https://wa.me/542604840852"),
         ("PORTAFOLIO WEB", "diegoaravena-it.vercel.app", "https://diegoaravena-it.vercel.app"),
         ("GITHUB", "github.com/DiegoAravena-lab", "https://github.com/DiegoAravena-lab"),
-        ("UBICACIÓN", "Mendoza, Argentina", None),
+        ("UBICACIÓN", "San Rafael, Mendoza, Argentina", None),
     ]
 
     for label, val, link in contact_items:
@@ -272,10 +272,15 @@ def render_cv():
             cur_y -= h_itm + 1.5
         cur_y -= 4
 
-    # IDIOMAS Y MODALIDAD
-    cur_y = draw_sb_section_header("IDIOMAS & MODALIDAD", cur_y)
-    p_mod = Paragraph("<b>Español:</b> Nativo · <b>Inglés:</b> Técnico<br/><b>Modalidad:</b> Presencial / Híbrido / Remoto", style_sb_val)
-    _, h_mod = p_mod.wrap(sidebar_w - 28, 50)
+    # IDIOMAS & INFORMACIÓN ADICIONAL
+    cur_y = draw_sb_section_header("IDIOMAS & DATOS", cur_y)
+    p_mod = Paragraph(
+        "<b>Español:</b> Nativo · <b>Inglés:</b> Avanzado<br/>"
+        "<b>Movilidad:</b> Carnet y vehículo propio<br/>"
+        "<b>Disponibilidad:</b> Para viajar · Híbrido/Remoto",
+        style_sb_val
+    )
+    _, h_mod = p_mod.wrap(sidebar_w - 28, 60)
     p_mod.drawOn(c, sidebar_x + 14, cur_y - h_mod)
 
 
@@ -290,85 +295,83 @@ def render_cv():
     c.drawString(main_x, main_top_y - 20, "DIEGO ARAVENA")
 
     c.setFillColor(C_ACCENT)
-    c.setFont("Helvetica-Bold", 9.5)
-    c.drawString(main_x, main_top_y - 33, "IT SUPPORT  ·  SYSTEM ADMINISTRATOR  ·  AUTOMATIZACIÓN & FULL-STACK")
+    c.setFont("Helvetica-Bold", 9.0)
+    c.drawString(main_x, main_top_y - 33, "IT SUPPORT · SYSADMIN · AUTOMATIZACIÓN & IA · MARKETING")
 
     # Línea divisoria elegante
     c.setStrokeColor(C_PRIMARY)
     c.setLineWidth(1.8)
     c.line(main_x, main_top_y - 39, main_x + main_w, main_top_y - 39)
 
-    c_y = main_top_y - 48
+    c_y = main_top_y - 56
 
     # Estilos de la columna principal
     style_summary = ParagraphStyle(
         'Main_Summary',
         fontName='Helvetica',
-        fontSize=8.2,
-        leading=11.5,
+        fontSize=8.0,
+        leading=10.8,
         textColor=C_TEXT
     )
     style_job_title = ParagraphStyle(
         'Main_JobTitle',
         fontName='Helvetica-Bold',
-        fontSize=8.8,
-        leading=11.5,
+        fontSize=8.6,
+        leading=11.0,
         textColor=C_DARK
     )
     style_job_meta = ParagraphStyle(
         'Main_JobMeta',
         fontName='Helvetica-Bold',
-        fontSize=7.5,
-        leading=9.5,
+        fontSize=7.3,
+        leading=9.2,
         textColor=C_MUTED
     )
     style_bullet = ParagraphStyle(
         'Main_Bullet',
         fontName='Helvetica',
-        fontSize=7.8,
-        leading=10.5,
+        fontSize=7.5,
+        leading=9.9,
         textColor=C_TEXT
     )
     style_proj_title = ParagraphStyle(
         'Main_ProjTitle',
         fontName='Helvetica-Bold',
-        fontSize=8.4,
-        leading=10.5,
+        fontSize=8.0,
+        leading=10.0,
         textColor=C_DARK
     )
     style_proj_tech = ParagraphStyle(
         'Main_ProjTech',
         fontName='Helvetica-Bold',
-        fontSize=7.0,
-        leading=9,
+        fontSize=6.8,
+        leading=8.6,
         textColor=C_ACCENT
     )
     style_proj_desc = ParagraphStyle(
         'Main_ProjDesc',
         fontName='Helvetica',
-        fontSize=7.6,
-        leading=10.0,
+        fontSize=7.4,
+        leading=9.5,
         textColor=C_TEXT
     )
 
     def draw_main_section(title, y_pos):
         c.setFillColor(C_PRIMARY)
-        c.setFont("Helvetica-Bold", 9.5)
+        c.setFont("Helvetica-Bold", 9.0)
         c.drawString(main_x, y_pos, title)
         c.setStrokeColor(C_SIDEBAR_LINE)
         c.setLineWidth(1)
         c.line(main_x, y_pos - 3, main_x + main_w, y_pos - 3)
-        return y_pos - 12
+        return y_pos - 10
 
-    # 1. PERFIL PROFESIONAL (EL GANCHO)
+    # 1. PERFIL PROFESIONAL (RESUMIDO + MARKETING)
     c_y = draw_main_section("PERFIL PROFESIONAL", c_y)
     summary_text = (
-        "Profesional IT especializado en <b>soporte de infraestructura crítica, administración de sistemas y automatización "
-        "de procesos para operaciones comerciales multisucursal</b>. Experiencia integral combinando diagnóstico de causa raíz "
-        "sobre servicios Windows, redes VPN y bases de datos (MongoDB, PostgreSQL) con desarrollo de aplicaciones a medida "
-        "(Python, Node.js, Next.js). Capacidad probada para relevar puntos de fricción operativa, integrar equipamiento comercial "
-        "(relojes biométricos, balanzas, pinpads) y <b>reemplazar tareas repetitivas por herramientas autónomas</b> que ahorran "
-        "horas de trabajo semanales y garantizan continuidad comercial."
+        "Profesional IT y desarrollador Full-Stack especializado en <b>infraestructura crítica, automatización con IA "
+        "y gestión estratégica de Marketing y Proyectos</b>. Combino administración de sistemas (Windows Server, VPN, POS, "
+        "MongoDB, PostgreSQL) con desarrollo a medida (Python, Node.js, Next.js) y visión comercial para optimizar "
+        "operaciones multisucursal y potenciar resultados."
     )
     p_sum = Paragraph(summary_text, style_summary)
     _, h_sum = p_sum.wrap(main_w, 200)
@@ -378,7 +381,7 @@ def render_cv():
     # 2. EXPERIENCIA LABORAL
     c_y = draw_main_section("EXPERIENCIA LABORAL", c_y)
 
-    p_jt = Paragraph("Soporte IT / Operaciones de Sistemas & Desarrollo Interno", style_job_title)
+    p_jt = Paragraph("Coordinación IT, Capacitación, Gestión Tecnológica & Marketing", style_job_title)
     _, h_jt = p_jt.wrap(main_w - 90, 50)
     p_jt.drawOn(c, main_x, c_y - h_jt)
 
@@ -386,18 +389,18 @@ def render_cv():
     _, h_date = p_date.wrap(80, 20)
     p_date.drawOn(c, main_x + main_w - 75, c_y - h_jt + 1)
 
-    c_y -= h_jt + 2
+    c_y -= h_jt + 1
 
-    p_org = Paragraph("Organización Retail / Mayorista Multisucursal · Red de sucursales y franquicias", style_job_meta)
+    p_org = Paragraph("La Yunta Mayorista (La Yunta S.A.) · Gestión transversal de ~38 sucursales", style_job_meta)
     _, h_org = p_org.wrap(main_w, 50)
     p_org.drawOn(c, main_x, c_y - h_org)
-    c_y -= h_org + 5
+    c_y -= h_org + 3
 
     exp_bullets = [
-        "<b>Administración de infraestructura distribuida:</b> Soporte y operación continua de servidores Windows Server, enlaces VPN multisucursal, servicios NSSM, proxies Nginx y servidores FTP de distribución centralizada (~1 TB de archivos operativos).",
-        "<b>Soporte especializado a puntos de venta (POS):</b> Diagnóstico de causa raíz y resolución de incidentes críticos sobre terminales de cobro, conectividad de pinpads serie (Ingenico), bases de datos MongoDB y APIs Node.js del ecosistema comercial.",
-        "<b>Desarrollo de software y automatizaciones internas:</b> Construcción de portales web autoservicio y scripts desatendidos en Python que eliminaron planillas manuales de liquidación, conciliación de medios de pago y emisión de cartelería.",
-        "<b>Supervisión proactiva y despliegues seguros:</b> Implementación de monitores concurrentes en tiempo real para ~35 nodos comerciales y publicación de servicios internos mediante Cloudflare Named Tunnels sin exponer puertos de red."
+        "<b>Coordinación Operativa & Infraestructura (~38 sucursales):</b> Gestión transversal de tecnología, resolución de incidencias, operación de Windows Server, VPN, NSSM, Nginx/FTP (~1 TB) y soporte POS (pinpads, balanzas, MongoDB/Node.js).",
+        "<b>Capacitación & Acompañamiento a Equipos:</b> Capacitación continua a usuarios de distintos niveles jerárquicos, elaboración de documentación operativa (videos y registros) e implementación de mejoras en procesos internos.",
+        "<b>Automatización & Herramientas Propias (IA / Full-Stack):</b> Impulso y desarrollo de portales web internos y scripts en Python/IA para optimizar tareas, reducir tiempos y mejorar la disponibilidad de información para toma de decisiones.",
+        "<b>Marketing Manager:</b> Planificación y ejecución de acciones de marketing, definición de objetivos comerciales y apoyo estratégico en toma de decisiones."
     ]
 
     for b in exp_bullets:
@@ -406,48 +409,61 @@ def render_cv():
         p_b = Paragraph(b, style_bullet)
         _, h_b = p_b.wrap(main_w - 14, 60)
         p_b.drawOn(c, main_x + 12, c_y - h_b)
-        c_y -= h_b + 4
+        c_y -= h_b + 2.5
 
-    c_y -= 4
+    c_y -= 3
+    p_jt2 = Paragraph("Consultor IT & Desarrollador Freelance — Sistemas a Medida", style_job_title)
+    _, h_jt2 = p_jt2.wrap(main_w, 40)
+    p_jt2.drawOn(c, main_x, c_y - h_jt2)
+    c_y -= h_jt2 + 2
+    for b in [
+        "<b>Distribuidora de Bebidas & Distribuidora de Ferreterías:</b> Desarrollo e implementación de Punto de Venta (POS) programado a medida; control de inventario y carga estructurada de ítems en base de datos."
+    ]:
+        c.setFillColor(C_ACCENT)
+        c.circle(main_x + 4, c_y - 4, 1.5, fill=1, stroke=0)
+        p_b = Paragraph(b, style_bullet)
+        _, h_b = p_b.wrap(main_w - 14, 60)
+        p_b.drawOn(c, main_x + 12, c_y - h_b)
+        c_y -= h_b + 2.5
 
-    # 3. SISTEMAS & PROYECTOS DESTACADOS EN PRODUCCIÓN (16 PROYECTOS TOTALES EN WEB)
+    c_y -= 2
+    p_jt3 = Paragraph("Profesor & Acompañante Terapéutico — Educación y Formación", style_job_title)
+    _, h_jt3 = p_jt3.wrap(main_w, 40)
+    p_jt3.drawOn(c, main_x, c_y - h_jt3)
+    c_y -= h_jt3 + 2
+    for b in [
+        "<b>Esc. San Martín, Esc. República de Siria e Instituto CENECA (San Rafael, Mza.):</b> Dictado de clases, acompañamiento terapéutico y seguimiento formativo personalizado."
+    ]:
+        c.setFillColor(C_ACCENT)
+        c.circle(main_x + 4, c_y - 4, 1.5, fill=1, stroke=0)
+        p_b = Paragraph(b, style_bullet)
+        _, h_b = p_b.wrap(main_w - 14, 60)
+        p_b.drawOn(c, main_x + 12, c_y - h_b)
+        c_y -= h_b + 3
+
+    c_y -= 5
+
+    # 3. SISTEMAS & PROYECTOS DESTACADOS EN PRODUCCIÓN
     c_y = draw_main_section("SISTEMAS & AUTOMATIZACIONES EN PRODUCCIÓN (SELECCIÓN)", c_y)
 
     projects_data = [
         (
             "BioReport Nexa & Automatización de Fichadas Biométricas",
             "Node.js · PowerShell · NSSM · OLEDB · Python · Supabase",
-            "Arquitectura integral (extractor universal como servicio Windows desatendido bajo LocalSystem + API Node.js + panel web en vivo) "
-            "que supera la virtualización UAC en bases MDB legadas y centraliza registros de múltiples sucursales con cierre diario y alertas de salidas faltantes.",
+            "Extractor universal como servicio Windows desatendido + API Node.js + panel web en vivo que supera virtualización UAC en MDB y centraliza fichadas multisucursal.",
             "https://diegoaravena-it.vercel.app/proyectos/bioreport-nexa"
         ),
         (
             "NexaPOS & Sistema de Inventario de Activos con QR",
-            "Next.js (App Router) · TypeScript · Tailwind · Prisma · PostgreSQL / Supabase · QR",
-            "Plataforma transaccional completa con control de acceso por roles jerárquicos (Vendedor / Supervisor de proveedores), auditoría de cobranzas, "
-            "edición inline de stock con trazabilidad histórica y gestión de inventario físico mediante lectura de códigos QR desde dispositivos móviles.",
+            "Next.js (App Router) · TypeScript · Prisma · PostgreSQL / Supabase · QR",
+            "Plataforma transaccional con roles jerárquicos, auditoría de cobranzas, edición inline de stock con trazabilidad histórica e inventario físico mediante lectura QR móvil.",
             "https://diegoaravena-it.vercel.app/proyectos/nexapos-web"
         ),
         (
-            "Portal Web de Scripts Operativos & Procesador VR Masivo",
-            "Python (Flask) · pandas · CompressionStream (GZIP) · openpyxl · SQLite",
-            "Plataforma web autoservicio que centraliza scripts de negocio para usuarios no técnicos. Incluye motor de cálculo para Reportes de Ventas "
-            "(discriminación Verde fiscal vs Rojo no fiscal sin fórmulas Excel) y compresión GZIP en navegador para superar límites serverless.",
+            "Portal de Scripts Operativos, Monitor POS (~35 nodos) & Balanzas Systel",
+            "Python (Flask) · Node.js · MongoDB · PDFKit · Cloudflare Named Tunnels",
+            "Portal autoservicio con procesador de Reportes de Ventas, tablero en paralelo de nodos POS, automatización FTP para ~15 balanzas (-4 h/sem) y cartelería PDF vectorial.",
             "https://diegoaravena-it.vercel.app/proyectos/panel-scripts-python"
-        ),
-        (
-            "Monitor de Ventas POS en Tiempo Real & Red de Balanzas Systel",
-            "Node.js · Express · Chart.js · Python · Servidor FTP",
-            "Tablero SPA con cliente HTTP nativo que consulta en paralelo ~35 nodos comerciales para supervisar ventas horarias y caídas de servicio, "
-            "combinado con script Python que automatiza la actualización de listas de precios para ~15 balanzas (-4 h/semana ahorradas).",
-            "https://diegoaravena-it.vercel.app/proyectos/monitor-ventas-pos"
-        ),
-        (
-            "Verificador de Precios MongoDB & Cartelería Vectorial OCR",
-            "Node.js · MongoDB · PDFKit · bwip-js · Cloudflare Named Tunnels",
-            "Consulta en vivo a colecciones de precios del POS expuestas mediante túnel HTTPS persistente sin abrir puertos, con generación masiva "
-            "de cartelería y cupones comerciales en PDF con códigos de barras vectoriales seleccionables.",
-            "https://diegoaravena-it.vercel.app/proyectos/verificador-precios-carteleria"
         ),
     ]
 
@@ -456,31 +472,46 @@ def render_cv():
         _, h_t = p_t.wrap(main_w, 30)
         p_t.drawOn(c, main_x, c_y - h_t)
 
-        # Enlace interactivo en título del proyecto hacia la web
         c.linkURL(p_url, (main_x, c_y - h_t, main_x + main_w, c_y), relative=0)
-        c_y -= h_t + 1
+        c_y -= h_t + 0.5
 
         p_tc = Paragraph(p_tech, style_proj_tech)
         _, h_tc = p_tc.wrap(main_w, 20)
         p_tc.drawOn(c, main_x, c_y - h_tc)
-        c_y -= h_tc + 1.5
+        c_y -= h_tc + 0.5
 
         p_d = Paragraph(p_desc, style_proj_desc)
         _, h_d = p_d.wrap(main_w, 60)
         p_d.drawOn(c, main_x, c_y - h_d)
-        c_y -= h_d + 6
+        c_y -= h_d + 4.5
 
-    # 4. METODOLOGÍA & CRITERIO OPERATIVO (PIE DE COLUMNA)
-    c_y -= 1
-    c_y = draw_main_section("CRITERIO DE TRABAJO & METODOLOGÍA", c_y)
-    crit_text = (
-        "<b>Diagnóstico de Causa Raíz:</b> Análisis del flujo técnico real antes de aplicar parches temporales.<br/>"
-        "<b>Automatización con Retorno Medible:</b> Enfoque pragmático en tareas que devuelven tiempo operativo al equipo.<br/>"
-        "<b>Seguridad y Resguardo:</b> Respaldos automatizados previos a cambios en producción y documentación de mantenimiento."
+    # 4. FORMACIÓN ACADÉMICA
+    c_y -= 4
+    c_y = draw_main_section("FORMACIÓN ACADÉMICA", c_y)
+    edu_text = (
+        "<b>Desarrollo de Software con IA</b> (2025–2026) · BigSchool — Universidad Isabel I de España<br/>"
+        "<b>Ciberseguridad y Hacking Ético</b> (2024–2026) · BigSchool — Universidad Isabel I de España<br/>"
+        "<b>Profesorado de Inglés</b> (2017–2022) · Formación complementaria en <b>Grado en Marketing</b>"
     )
-    p_crit = Paragraph(crit_text, style_summary)
-    _, h_crit = p_crit.wrap(main_w, 60)
-    p_crit.drawOn(c, main_x, c_y - h_crit)
+    p_edu = Paragraph(edu_text, style_summary)
+    _, h_edu = p_edu.wrap(main_w, 60)
+    p_edu.drawOn(c, main_x, c_y - h_edu)
+    c_y -= h_edu + 8
+
+    # 5. REFERENCIAS
+    c_y = draw_main_section("REFERENCIAS LABORALES Y COMERCIALES", c_y)
+    refs_list = [
+        ("<b>Florencia Carboni</b> | Gerente General — La Yunta S.A. | Tel: +54 9 11 6203-1060", "tel:+5491162031060"),
+        ("<b>Directora General — Instituto CENECA</b> (Docencia / Acomp. Terapéutico) | Tel: +54 260 440 7977", "tel:+542604407977"),
+        ("<b>Jorge Cruzate</b> | Dueño — Distribuidora de Ferreterías (Control Inventario / BD) | Tel: +54 260 466 2421", "tel:+542604662421"),
+        ("<b>Dueño — Distribuidora de Bebidas</b> (POS Programado a Medida) | Tel: +54 260 427 3325", "tel:+542604273325"),
+    ]
+    for r_txt, r_tel in refs_list:
+        p_ref = Paragraph(r_txt, style_proj_desc)
+        _, h_ref = p_ref.wrap(main_w, 30)
+        p_ref.drawOn(c, main_x, c_y - h_ref)
+        c.linkURL(r_tel, (main_x, c_y - h_ref, main_x + main_w, c_y), relative=0)
+        c_y -= h_ref + 2.5
 
     # FINALIZAR Y GUARDAR
     c.showPage()

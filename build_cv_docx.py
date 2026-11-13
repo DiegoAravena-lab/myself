@@ -186,7 +186,7 @@ def build_docx():
     p_pill.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p_pill.paragraph_format.space_before = Pt(0)
     p_pill.paragraph_format.space_after = Pt(8)
-    run_pill = p_pill.add_run("MENDOZA, ARGENTINA")
+    run_pill = p_pill.add_run("SAN RAFAEL, MENDOZA")
     run_pill.font.name = "Arial"
     run_pill.font.size = Pt(7.5)
     run_pill.font.bold = True
@@ -200,7 +200,7 @@ def build_docx():
         ("WHATSAPP / TEL", "+54 260 484 0852"),
         ("PORTAFOLIO WEB", "diegoaravena-it.vercel.app"),
         ("GITHUB", "github.com/DiegoAravena-lab"),
-        ("UBICACIÓN", "Mendoza, Argentina"),
+        ("UBICACIÓN", "San Rafael, Mendoza, Argentina"),
     ]
     for lbl, val in contacts:
         p_c = cell_sb.add_paragraph()
@@ -322,8 +322,8 @@ def build_docx():
             r_i.font.size = Pt(7)
             r_i.font.color.rgb = CLR_TEXT
 
-    # IDIOMAS & MODALIDAD
-    add_sidebar_heading(cell_sb, "IDIOMAS & MODALIDAD")
+    # IDIOMAS & DATOS
+    add_sidebar_heading(cell_sb, "IDIOMAS & DATOS")
     p_im = cell_sb.add_paragraph()
     p_im.paragraph_format.space_before = Pt(1)
     p_im.paragraph_format.space_after = Pt(0)
@@ -336,13 +336,18 @@ def build_docx():
     r_im3 = p_im.add_run("Inglés: ")
     r_im3.font.bold = True
     r_im3.font.size = Pt(7.2)
-    r_im4 = p_im.add_run("Técnico\n")
+    r_im4 = p_im.add_run("Avanzado\n")
     r_im4.font.size = Pt(7.2)
-    r_im5 = p_im.add_run("Modalidad: ")
+    r_im5 = p_im.add_run("Movilidad: ")
     r_im5.font.bold = True
     r_im5.font.size = Pt(7.2)
-    r_im6 = p_im.add_run("Presencial / Híbrido / Remoto")
+    r_im6 = p_im.add_run("Carnet y vehículo propio\n")
     r_im6.font.size = Pt(7.2)
+    r_im7 = p_im.add_run("Disponibilidad: ")
+    r_im7.font.bold = True
+    r_im7.font.size = Pt(7.2)
+    r_im8 = p_im.add_run("Para viajar · Híbrido/Remoto")
+    r_im8.font.size = Pt(7.2)
 
     # =========================================================================
     # COLUMNA PRINCIPAL (MAIN CONTENT)
@@ -361,7 +366,7 @@ def build_docx():
     p_title = cell_mn.add_paragraph()
     p_title.paragraph_format.space_before = Pt(0)
     p_title.paragraph_format.space_after = Pt(2)
-    r_title = p_title.add_run("IT SUPPORT  ·  SYSTEM ADMINISTRATOR  ·  AUTOMATIZACIÓN & FULL-STACK")
+    r_title = p_title.add_run("IT SUPPORT · SYSADMIN · AUTOMATIZACIÓN & IA · MARKETING")
     r_title.font.name = "Arial"
     r_title.font.size = Pt(9)
     r_title.font.bold = True
@@ -370,7 +375,7 @@ def build_docx():
     # Barra decorativa
     p_div = cell_mn.add_paragraph()
     p_div.paragraph_format.space_before = Pt(0)
-    p_div.paragraph_format.space_after = Pt(6)
+    p_div.paragraph_format.space_after = Pt(12)
     r_div = p_div.add_run("―" * 58)
     r_div.font.name = "Arial"
     r_div.font.size = Pt(4)
@@ -385,12 +390,10 @@ def build_docx():
     p_prof.paragraph_format.line_spacing = Pt(11)
 
     r_prof = p_prof.add_run(
-        "Profesional IT especializado en soporte de infraestructura crítica, administración de sistemas y automatización "
-        "de procesos para operaciones comerciales multisucursal. Experiencia integral combinando diagnóstico de causa raíz "
-        "sobre servicios Windows, redes VPN y bases de datos (MongoDB, PostgreSQL) con desarrollo de aplicaciones a medida "
-        "(Python, Node.js, Next.js). Capacidad probada para relevar puntos de fricción operativa, integrar equipamiento comercial "
-        "(relojes biométricos, balanzas, pinpads) y reemplazar tareas repetitivas por herramientas autónomas que ahorran "
-        "horas de trabajo semanales y garantizan continuidad comercial."
+        "Profesional IT y desarrollador Full-Stack especializado en infraestructura crítica, automatización con IA "
+        "y gestión estratégica de Marketing y Proyectos. Combino administración de sistemas (Windows Server, VPN, POS, "
+        "MongoDB, PostgreSQL) con desarrollo a medida (Python, Node.js, Next.js) y visión comercial para optimizar "
+        "operaciones multisucursal y potenciar resultados."
     )
     r_prof.font.name = "Arial"
     r_prof.font.size = Pt(8.0)
@@ -402,7 +405,7 @@ def build_docx():
     p_exp_h = cell_mn.add_paragraph()
     p_exp_h.paragraph_format.space_before = Pt(0)
     p_exp_h.paragraph_format.space_after = Pt(1)
-    r_eh1 = p_exp_h.add_run("Soporte IT / Operaciones de Sistemas & Desarrollo Interno")
+    r_eh1 = p_exp_h.add_run("Coordinación IT, Capacitación, Gestión Tecnológica & Marketing")
     r_eh1.font.name = "Arial"
     r_eh1.font.size = Pt(8.6)
     r_eh1.font.bold = True
@@ -417,17 +420,17 @@ def build_docx():
     p_exp_sub = cell_mn.add_paragraph()
     p_exp_sub.paragraph_format.space_before = Pt(0)
     p_exp_sub.paragraph_format.space_after = Pt(4)
-    r_es = p_exp_sub.add_run("Organización Retail / Mayorista Multisucursal · Red de sucursales y franquicias")
+    r_es = p_exp_sub.add_run("La Yunta Mayorista (La Yunta S.A.) · Gestión transversal de ~38 sucursales")
     r_es.font.name = "Arial"
     r_es.font.size = Pt(7.4)
     r_es.font.italic = True
     r_es.font.color.rgb = CLR_MUTED
 
     exp_bullets = [
-        ("Administración de infraestructura distribuida: ", "Soporte y operación continua de servidores Windows Server, enlaces VPN multisucursal, servicios NSSM, proxies Nginx y servidores FTP de distribución centralizada (~1 TB de archivos operativos)."),
-        ("Soporte especializado a puntos de venta (POS): ", "Diagnóstico de causa raíz y resolución de incidentes críticos sobre terminales de cobro, conectividad de pinpads serie (Ingenico), bases de datos MongoDB y APIs Node.js del ecosistema comercial."),
-        ("Desarrollo de software y automatizaciones internas: ", "Construcción de portales web autoservicio y scripts desatendidos en Python que eliminaron planillas manuales de liquidación, conciliación de medios de pago y emisión de cartelería."),
-        ("Supervisión proactiva y despliegues seguros: ", "Implementación de monitores concurrentes en tiempo real para ~35 nodos comerciales y publicación de servicios internos mediante Cloudflare Named Tunnels sin exponer puertos de red.")
+        ("Coordinación Operativa & Infraestructura (~38 sucursales): ", "Gestión transversal de tecnología, resolución de incidencias, operación de Windows Server, VPN, NSSM, Nginx/FTP (~1 TB) y soporte POS (pinpads, balanzas, MongoDB/Node.js)."),
+        ("Capacitación & Acompañamiento a Equipos: ", "Capacitación continua a usuarios de distintos niveles jerárquicos, elaboración de documentación operativa (videos y registros) e implementación de mejoras en procesos internos."),
+        ("Automatización & Herramientas Propias (IA / Full-Stack): ", "Impulso y desarrollo de portales web internos y scripts en Python/IA para optimizar tareas, reducir tiempos y mejorar la disponibilidad de información para toma de decisiones."),
+        ("Marketing Manager: ", "Planificación y ejecución de acciones de marketing, definición de objetivos comerciales y apoyo estratégico en toma de decisiones.")
     ]
 
     for b_bold, b_text in exp_bullets:
@@ -453,6 +456,63 @@ def build_docx():
         r_bt.font.size = Pt(7.6)
         r_bt.font.color.rgb = CLR_TEXT
 
+    # 2.5 EXPERIENCIA PREVIA Y FREELANCE
+    p_jt2 = cell_mn.add_paragraph()
+    p_jt2.paragraph_format.space_before = Pt(3)
+    p_jt2.paragraph_format.space_after = Pt(1)
+    r_jt2 = p_jt2.add_run("Consultor IT & Desarrollador Freelance — Sistemas a Medida")
+    r_jt2.font.name = "Arial"
+    r_jt2.font.size = Pt(8.3)
+    r_jt2.font.bold = True
+    r_jt2.font.color.rgb = CLR_DARK
+
+    p_b2 = cell_mn.add_paragraph()
+    p_b2.paragraph_format.space_before = Pt(0)
+    p_b2.paragraph_format.space_after = Pt(2)
+    p_b2.paragraph_format.line_spacing = Pt(9.5)
+    r_bu2 = p_b2.add_run("• ")
+    r_bu2.font.name = "Arial"
+    r_bu2.font.size = Pt(8)
+    r_bu2.font.bold = True
+    r_bu2.font.color.rgb = CLR_ACCENT
+    r_bb2 = p_b2.add_run("Distribuidora de Bebidas & Distribuidora de Ferreterías: ")
+    r_bb2.font.name = "Arial"
+    r_bb2.font.size = Pt(7.5)
+    r_bb2.font.bold = True
+    r_bb2.font.color.rgb = CLR_DARK
+    r_bt2 = p_b2.add_run("Desarrollo e implementación de Punto de Venta (POS) programado a medida; control de inventario y carga estructurada de ítems en base de datos.")
+    r_bt2.font.name = "Arial"
+    r_bt2.font.size = Pt(7.5)
+    r_bt2.font.color.rgb = CLR_TEXT
+
+    p_jt3 = cell_mn.add_paragraph()
+    p_jt3.paragraph_format.space_before = Pt(2)
+    p_jt3.paragraph_format.space_after = Pt(1)
+    r_jt3 = p_jt3.add_run("Profesor & Acompañante Terapéutico — Educación y Formación")
+    r_jt3.font.name = "Arial"
+    r_jt3.font.size = Pt(8.3)
+    r_jt3.font.bold = True
+    r_jt3.font.color.rgb = CLR_DARK
+
+    p_b3 = cell_mn.add_paragraph()
+    p_b3.paragraph_format.space_before = Pt(0)
+    p_b3.paragraph_format.space_after = Pt(2)
+    p_b3.paragraph_format.line_spacing = Pt(9.5)
+    r_bu3 = p_b3.add_run("• ")
+    r_bu3.font.name = "Arial"
+    r_bu3.font.size = Pt(8)
+    r_bu3.font.bold = True
+    r_bu3.font.color.rgb = CLR_ACCENT
+    r_bb3 = p_b3.add_run("Esc. San Martín, Esc. República de Siria e Instituto CENECA (San Rafael, Mza.): ")
+    r_bb3.font.name = "Arial"
+    r_bb3.font.size = Pt(7.5)
+    r_bb3.font.bold = True
+    r_bb3.font.color.rgb = CLR_DARK
+    r_bt3 = p_b3.add_run("Dictado de clases, acompañamiento terapéutico y seguimiento formativo personalizado.")
+    r_bt3.font.name = "Arial"
+    r_bt3.font.size = Pt(7.5)
+    r_bt3.font.color.rgb = CLR_TEXT
+
     # 3. SISTEMAS & AUTOMATIZACIONES EN PRODUCCIÓN
     add_main_heading(cell_mn, "SISTEMAS & AUTOMATIZACIONES EN PRODUCCIÓN (SELECCIÓN)")
 
@@ -460,27 +520,17 @@ def build_docx():
         (
             "BioReport Nexa & Automatización de Fichadas Biométricas",
             "Node.js · PowerShell · NSSM · OLEDB · Python · Supabase",
-            "Arquitectura integral (extractor universal como servicio Windows desatendido bajo LocalSystem + API Node.js + panel web en vivo) que supera la virtualización UAC en bases MDB legadas y centraliza registros de múltiples sucursales con cierre diario y alertas de salidas faltantes."
+            "Extractor universal como servicio Windows desatendido + API Node.js + panel web en vivo que supera virtualización UAC en MDB y centraliza fichadas multisucursal."
         ),
         (
             "NexaPOS & Sistema de Inventario de Activos con QR",
-            "Next.js (App Router) · TypeScript · Tailwind · Prisma · PostgreSQL / Supabase · QR",
-            "Plataforma transaccional completa con control de acceso por roles jerárquicos (Vendedor / Supervisor de proveedores), auditoría de cobranzas, edición inline de stock con trazabilidad histórica y gestión de inventario físico mediante lectura de códigos QR desde dispositivos móviles."
+            "Next.js (App Router) · TypeScript · Prisma · PostgreSQL / Supabase · QR",
+            "Plataforma transaccional con roles jerárquicos, auditoría de cobranzas, edición inline de stock con trazabilidad histórica e inventario físico mediante lectura QR móvil."
         ),
         (
-            "Portal Web de Scripts Operativos & Procesador VR Masivo",
-            "Python (Flask) · pandas · CompressionStream (GZIP) · openpyxl · SQLite",
-            "Plataforma web autoservicio que centraliza scripts de negocio para usuarios no técnicos. Incluye motor de cálculo para Reportes de Ventas (discriminación Verde fiscal vs Rojo no fiscal sin fórmulas Excel) y compresión GZIP en navegador para superar límites serverless."
-        ),
-        (
-            "Monitor de Ventas POS en Tiempo Real & Red de Balanzas Systel",
-            "Node.js · Express · Chart.js · Python · Servidor FTP",
-            "Tablero SPA con cliente HTTP nativo que consulta en paralelo ~35 nodos comerciales para supervisar ventas horarias y caídas de servicio, combinado con script Python que automatiza la actualización de listas de precios para ~15 balanzas (-4 h/semana ahorradas)."
-        ),
-        (
-            "Verificador de Precios MongoDB & Cartelería Vectorial OCR",
-            "Node.js · MongoDB · PDFKit · bwip-js · Cloudflare Named Tunnels",
-            "Consulta en vivo a colecciones de precios del POS expuestas mediante túnel HTTPS persistente sin abrir puertos, con generación masiva de cartelería y cupones comerciales en PDF con códigos de barras vectoriales seleccionables."
+            "Portal de Scripts Operativos, Monitor POS (~35 nodos) & Balanzas Systel",
+            "Python (Flask) · Node.js · MongoDB · PDFKit · Cloudflare Named Tunnels",
+            "Portal autoservicio con procesador de Reportes de Ventas, tablero en paralelo de nodos POS, automatización FTP para ~15 balanzas (-4 h/sem) y cartelería PDF vectorial."
         ),
     ]
 
@@ -512,29 +562,52 @@ def build_docx():
         r_pd.font.size = Pt(7.4)
         r_pd.font.color.rgb = CLR_TEXT
 
-    # 4. CRITERIO DE TRABAJO & METODOLOGÍA
-    add_main_heading(cell_mn, "CRITERIO DE TRABAJO & METODOLOGÍA")
-    criterios = [
-        ("Diagnóstico de Causa Raíz: ", "Análisis del flujo técnico real antes de aplicar parches temporales."),
-        ("Automatización con Retorno Medible: ", "Enfoque pragmático en tareas que devuelven tiempo operativo al equipo."),
-        ("Seguridad y Resguardo: ", "Respaldos automatizados previos a cambios en producción y documentación de mantenimiento.")
+    # 4. FORMACIÓN ACADÉMICA
+    add_main_heading(cell_mn, "FORMACIÓN ACADÉMICA")
+    formacion = [
+        ("Desarrollo de Software con IA (2025–2026) · ", "BigSchool — Universidad Isabel I de España"),
+        ("Ciberseguridad y Hacking Ético (2024–2026) · ", "BigSchool — Universidad Isabel I de España"),
+        ("Profesorado de Inglés (2017–2022) · ", "Formación complementaria en Grado en Marketing"),
     ]
-    for c_bold, c_desc in criterios:
+    for f_bold, f_desc in formacion:
         p_cr = cell_mn.add_paragraph()
         p_cr.paragraph_format.space_before = Pt(0)
         p_cr.paragraph_format.space_after = Pt(1.5)
         p_cr.paragraph_format.line_spacing = Pt(9.5)
 
-        r_cb = p_cr.add_run(c_bold)
+        r_cb = p_cr.add_run(f_bold)
         r_cb.font.name = "Arial"
-        r_cb.font.size = Pt(7.4)
+        r_cb.font.size = Pt(7.6)
         r_cb.font.bold = True
         r_cb.font.color.rgb = CLR_DARK
 
-        r_cd = p_cr.add_run(c_desc)
+        r_cd = p_cr.add_run(f_desc)
         r_cd.font.name = "Arial"
-        r_cd.font.size = Pt(7.4)
+        r_cd.font.size = Pt(7.6)
         r_cd.font.color.rgb = CLR_TEXT
+
+    # 5. REFERENCIAS LABORALES Y COMERCIALES
+    add_main_heading(cell_mn, "REFERENCIAS LABORALES Y COMERCIALES")
+    refs = [
+        ("Florencia Carboni ", "| Gerente General — La Yunta S.A. | Tel: +54 9 11 6203-1060"),
+        ("Directora General — Instituto CENECA ", "(Docencia / Acomp. Terapéutico) | Tel: +54 260 440 7977"),
+        ("Jorge Cruzate ", "| Dueño — Distribuidora de Ferreterías (Control Inventario / BD) | Tel: +54 260 466 2421"),
+        ("Dueño — Distribuidora de Bebidas ", "(POS Programado a Medida) | Tel: +54 260 427 3325"),
+    ]
+    for r_bold, r_rest in refs:
+        p_ref = cell_mn.add_paragraph()
+        p_ref.paragraph_format.space_before = Pt(0)
+        p_ref.paragraph_format.space_after = Pt(1.5)
+        p_ref.paragraph_format.line_spacing = Pt(9.5)
+        r_rb = p_ref.add_run(r_bold)
+        r_rb.font.name = "Arial"
+        r_rb.font.size = Pt(7.5)
+        r_rb.font.bold = True
+        r_rb.font.color.rgb = CLR_DARK
+        r_rd = p_ref.add_run(r_rest)
+        r_rd.font.name = "Arial"
+        r_rd.font.size = Pt(7.5)
+        r_rd.font.color.rgb = CLR_TEXT
 
     # Guardar documento
     doc.save(str(OUTPUT_DOCX))
@@ -546,3 +619,4 @@ def build_docx():
 
 if __name__ == "__main__":
     build_docx()
+
