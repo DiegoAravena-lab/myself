@@ -17,6 +17,7 @@
 - **Desarrollo de Software con IA (2025–2026)** — BigSchool · Universidad Isabel I de España
 - **Ciberseguridad y Hacking Ético (2024–2026)** — BigSchool · Universidad Isabel I de España
 - **Profesorado de Inglés (2017–2022)** — Formación complementaria en **Grado en Marketing**
+- **Ingeniería Informática** — Estudios universitarios (sin finalizar)
 
 ## Forma de trabajo
 - Busco la causa raíz antes de aplicar soluciones improvisadas
