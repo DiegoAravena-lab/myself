@@ -15,6 +15,9 @@ MongoDB (administración, consultas, migraciones y precios POS) · PostgreSQL y 
 ## Desarrollo y automatización
 Python (Flask, pandas, numpy, openpyxl, psutil, PyMuPDF, ReportLab, vtracer) · PowerShell y Batch (Windows) · JavaScript y Node.js (Express, PDFKit, bwip-js) · TypeScript, React y Next.js (App Router) · Tailwind CSS · APIs REST · Git y GitHub · Docker y WSL/Ubuntu
 
+## Gestión, capacitación y marketing
+Project Management IT · Capacitación a equipos de distintos niveles jerárquicos · Documentación técnica (videos y registros) · Gestión de Marketing y estrategia comercial · Idioma Inglés Avanzado · Docencia y acompañamiento terapéutico
+
 ## En desarrollo y exploración
 - **Aplicación de presupuestos y auditoría (en análisis y prototipo):** control de presupuestos por sector y sucursal, seguimiento de consumos internos y detección de desvíos frente a límites.
 - **Integraciones de mensajería y soporte (en exploración):** pruebas con Docker, WSL, Evolution API y Chatwoot.

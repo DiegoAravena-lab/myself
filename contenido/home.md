@@ -6,9 +6,9 @@
 **Botones:** Ver proyectos · Escribir por mail
 
 ## Presentación
-Soy Diego Aravena, profesional IT en Mendoza, Argentina. Combino la administración y el soporte de infraestructura crítica con el desarrollo de sistemas POS web, portales internos y automatizaciones en Python y Node.js que eliminan tareas manuales y errores operativos.
+Soy Diego Aravena, profesional IT en San Rafael, Mendoza, Argentina. Combino la administración y el soporte de infraestructura crítica con el desarrollo de sistemas POS web, portales internos y automatizaciones con IA en Python y Node.js que eliminan tareas manuales y errores operativos.
 
-Mi forma de trabajar: analizo cómo funciona el circuito real, identifico la causa raíz, implemento la solución completa y documento el procedimiento para que el equipo pueda operarlo y mantenerlo.
+Complemento mi perfil técnico con gestión de marketing, coordinación y capacitación de equipos de distintos niveles jerárquicos, inglés avanzado y experiencia docente. Analizo el circuito real, identifico la causa raíz, implemento la solución completa y documento el procedimiento para que el equipo pueda operarlo.
 
 ## Ticket del hero (contenido de cada renglón)
 ```
@@ -27,7 +27,7 @@ PORTFOLIO IT · DIEGO ARAVENA
 1  Verificador, Vouchers y PDF
    MongoDB, CR80 y cartelería     automático
 --------------------------------
-TOTAL  16 proyectos productivos    OK
+TOTAL  17 proyectos productivos    OK
 GRACIAS POR SU VISITA
 ```
 

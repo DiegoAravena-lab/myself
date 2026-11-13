@@ -64,6 +64,8 @@ export interface ExperienciaData {
   puesto: string;
   entorno: string;
   responsabilidades: string[];
+  trayectoriaComplementaria: string[];
+  formacion: string[];
   formaDeTrabajo: string[];
   objetivo: string;
 }
@@ -322,7 +324,13 @@ export function getExperienciaData(): ExperienciaData {
 
   const puestoMatch = raw.match(/^##\s+([^\n]+)\n\*\*([^*]+)\*\*\s*·\s*\*\*Modalidad:\*\*\s*([^\n]+)/m);
   const responsabilidadesBlock = raw.match(
-    /## Soporte IT[\s\S]*?\n\n([\s\S]*?)\n\n## Forma de trabajo/
+    /\*\*Modalidad:\*\*[^\n]*\n\n([\s\S]*?)\n\n## (?:Trayectoria complementaria|Forma de trabajo)/
+  );
+  const trayectoriaBlock = raw.match(
+    /## Trayectoria complementaria[^\n]*\n([\s\S]*?)\n\n## Formación académica/
+  );
+  const formacionBlock = raw.match(
+    /## Formación académica[^\n]*\n([\s\S]*?)\n\n## Forma de trabajo/
   );
   const formaBlock = raw.match(
     /## Forma de trabajo\n([\s\S]*?)\n\n## Objetivo profesional/
@@ -334,14 +342,16 @@ export function getExperienciaData(): ExperienciaData {
       .split("\n")
       .map((l) => l.trim())
       .filter((l) => l.startsWith("-"))
-      .map((l) => l.replace(/^-\s*/, ""));
+      .map((l) => l.replace(/^-\s*/, "").replace(/\*\*/g, ""));
 
   return {
-    puesto: puestoMatch?.[1].trim() ?? "Soporte IT / Operaciones de sistemas y desarrollo interno",
+    puesto: puestoMatch?.[1].trim() ?? "Coordinación IT, Capacitación, Gestión Tecnológica & Marketing",
     entorno: puestoMatch
       ? `${puestoMatch[2].trim()} · ${puestoMatch[3].trim()}`
-      : "Organización retail/mayorista multisucursal",
+      : "La Yunta Mayorista (~38 sucursales)",
     responsabilidades: parseBullets(responsabilidadesBlock?.[1]),
+    trayectoriaComplementaria: parseBullets(trayectoriaBlock?.[1]),
+    formacion: parseBullets(formacionBlock?.[1]),
     formaDeTrabajo: parseBullets(formaBlock?.[1]),
     objetivo: objetivoBlock?.[1].trim() ?? "",
   };

@@ -240,6 +240,32 @@ export default function HomePage() {
               </p>
             ) : null}
           </div>
+
+          {experiencia.trayectoriaComplementaria.length > 0 ? (
+            <div className="rounded-[4px] border border-[#B9C3CC] bg-[#FAFBFA] p-5 sm:p-6">
+              <h3 className="text-lg font-semibold text-[#232B38]">
+                Trayectoria complementaria (Freelance y Educación)
+              </h3>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[#232B38]">
+                {experiencia.trayectoriaComplementaria.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
+          {experiencia.formacion.length > 0 ? (
+            <div className="rounded-[4px] border border-[#B9C3CC] bg-[#FAFBFA] p-5 sm:p-6">
+              <h3 className="text-lg font-semibold text-[#232B38]">
+                Formación académica y certificaciones
+              </h3>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[#232B38]">
+                {experiencia.formacion.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
       </section>
 
