@@ -29,3 +29,4 @@ Relevamiento de requerimientos comerciales, diseño de la base de datos de produ
 
 ## Qué demuestra
 Capacidad para relevar necesidades reales de un comercio distribuidor y construir un punto de venta completo, adaptado a reglas de negocio específicas.
+

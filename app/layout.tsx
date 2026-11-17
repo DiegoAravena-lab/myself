@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { IBM_Plex_Mono, Public_Sans } from "next/font/google";
 import { getHomeData } from "@/lib/contenido";
 import { getBaseUrl } from "@/lib/site";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -117,6 +120,29 @@ export default function RootLayout({
             <p>Documentación publicada sin datos sensibles ni credenciales.</p>
           </div>
         </footer>
+
+        {GA_MEASUREMENT_ID ? (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            />
+            <Script
+              id="google-analytics-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_MEASUREMENT_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        ) : null}
       </body>
     </html>
   );
