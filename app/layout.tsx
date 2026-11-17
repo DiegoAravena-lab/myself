@@ -6,7 +6,7 @@ import { getHomeData } from "@/lib/contenido";
 import { getBaseUrl } from "@/lib/site";
 import "./globals.css";
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-XE1MPNYJ86";
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
