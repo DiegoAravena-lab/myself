@@ -4,15 +4,18 @@
 Una web de presentación para darse a conocer ante empleadores y clientes, que muestre proyectos reales (problema, responsabilidad, solución, resultado) **sin exponer información confidencial**.
 
 ## 2. Alcance
-**Incluye (v1):** sitio estático con home, 6 proyectos, casos técnicos, stack, experiencia y contacto por mail, WhatsApp y LinkedIn.
-**No incluye (v1):** backend, formulario con envío, blog, CMS, panel de administración.
-**Backend (al final, opcional):** formulario de contacto (Route Handler de Next.js + Resend, o Supabase) y analítica básica.
+**Incluye (v1):** sitio estático con home, 17 proyectos productivos documentados, casos técnicos, stack, experiencia laboral transversal, formación académica, referencias y contacto directo.
+**Analítica y métricas:** Google Analytics 4 (GA4) integrado con ID de medición `G-XE1MPNYJ86`.
+**Currículum Vitae descargable:** PDF y DOCX en 1 sola hoja A4 con diseño ejecutivo y códigos QR, sincronizados en `public/`.
+**No incluye (v1):** backend pesado, blog o base de datos externa para el contenido.
 
 ## 3. Stack
-- Next.js (App Router) + TypeScript + Tailwind CSS
-- Contenido en archivos `.md`/`.mdx` dentro del repo (sin base de datos)
-- Deploy en Vercel conectado a GitHub (cada push a `main` publica)
-- Fuentes: Public Sans (general) e IBM Plex Mono (solo dentro del ticket), con `next/font`
+- Next.js 15 (App Router) + TypeScript + Tailwind CSS
+- Contenido en Markdown (`contenido/` y `contenido/proyectos/`) parseado estáticamente
+- Analítica: Google Analytics 4 vía `next/script` (`G-XE1MPNYJ86`)
+- Generadores de CV: Python con ReportLab y python-docx
+- Deploy continuo en Vercel conectado a GitHub (`https://diegoaravena-it.vercel.app`)
+- Fuentes: Public Sans (general) e IBM Plex Mono (dentro del ticket térmico)
 
 ## 4. Estructura sugerida del repo
 ```
@@ -46,22 +49,23 @@ portfolio/
 | 7. Backend (final) | Formulario de contacto y anti-spam | Los mensajes llegan al mail |
 
 ## 6. Checklist de calidad
-- [ ] Funciona en móvil (360 px) y escritorio
-- [ ] Navegación por teclado con foco visible
-- [ ] Animación desactivada con `prefers-reduced-motion`
-- [ ] Contraste de texto suficiente
-- [ ] Metadatos: título, descripción, imagen para compartir
-- [ ] Línea de lectura menor a 80 caracteres
-- [ ] Revisado contra `02-CONFIDENCIALIDAD.md`
+- [x] Funciona en móvil (360 px) y escritorio
+- [x] Navegación por teclado con foco visible
+- [x] Animación desactivada con `prefers-reduced-motion`
+- [x] Contraste de texto suficiente
+- [x] Metadatos: título, descripción, OpenGraph para redes
+- [x] Línea de lectura menor a 80 caracteres
+- [x] Revisado contra `02-CONFIDENCIALIDAD.md`
+- [x] Descarga de CV en PDF y DOCX en 1 sola hoja A4
+- [x] Medición de visitas con Google Analytics 4 (`G-XE1MPNYJ86`)
 
-## 7. Decisiones pendientes
-1. **[DECIDIR]** ¿Nombrar a la empresa o usar "organización retail/mayorista multisucursal"? (recomendado: genérico, salvo autorización escrita)
-2. **[COMPLETAR]** Ciudad a mostrar (propuesta: Mendoza, Argentina)
-3. **[COMPLETAR]** Fechas de experiencia, formación, certificaciones e idiomas
-4. **[COMPLETAR]** Nivel real por tecnología (básico / intermedio / avanzado)
-5. **[DECIDIR]** Publicar o no el teléfono (riesgo de spam; alternativa: botón de WhatsApp)
-6. **[COMPLETAR]** Repositorios de GitHub que se puedan mostrar
-7. **[DECIDIR]** Dominio propio (ej. `diegoaravena.dev`) o subdominio `*.vercel.app`
+## 7. Decisiones tomadas
+1. **Empresa / Entorno:** La Yunta Mayorista (~38 sucursales), con confidencialidad en datos internos.
+2. **Ciudad:** San Rafael, Mendoza, Argentina.
+3. **Formación:** BigSchool / Universidad Isabel I (IA y Ciberseguridad), Profesorado de Inglés, Grado en Marketing e Ingeniería Informática (sin finalizar).
+4. **Dominio:** `diegoaravena-it.vercel.app`.
+5. **Contacto:** Botón directo a WhatsApp, mail y enlaces de GitHub/LinkedIn.
+6. **Proyectos:** 17 proyectos productivos en línea, incluyendo BioReport Nexa y POS de bebidas a medida.
 
 ## 8. Orden de trabajo recomendado
 Fase 0 → 1 → 2 → 3 → 6 (publicar una primera versión) → 4 → 5 → 7.
